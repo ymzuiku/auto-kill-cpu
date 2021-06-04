@@ -17,12 +17,12 @@ console.log({
 });
 
 if (!command) {
-  console.error("[error] Need input command!");
+  console.error("[auto-kill-cpu][error] Need input command!");
   exit(0);
 }
 
 function killer() {
-  console.log("Reload...");
+  console.log("[auto-kill-cpu] Lookup...");
   ps.lookup(
     {
       command,
