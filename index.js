@@ -3,11 +3,23 @@
 const ps = require("ps-node");
 const pidusage = require("pidusage");
 const exec = require("child_process").exec;
+const { exit } = require("process");
 const argv = process.argv.splice(2);
 
-const command = argv[1] || "go";
-const cpu = Number(argv[2]) || 85;
-const sec = Number(argv[3]) || 60;
+const command = argv[0];
+const cpu = Number(argv[1]) || 85;
+const sec = Number(argv[2]) || 30;
+
+console.log({
+  command,
+  cpu,
+  sec,
+});
+
+if (!command) {
+  console.error("[error] Need input command!");
+  exit(0);
+}
 
 function killer() {
   console.log("Reload...");

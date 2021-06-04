@@ -10,6 +10,6 @@ auto-kill-cpu go 85 30
 ```
 
 ```bash
-# 若不加参数，默认为 go 85 30
-auto-kill-cpu
+# 若不加cpu和时间参数，默认为 85 30
+auto-kill-cpu go
 ```
