@@ -25,7 +25,7 @@ function killer() {
           pidusage(_process.pid, (err, stats) => {
             if (stats && stats.cpu > cpu) {
               exec(`kill -9 ${stats.pid}`);
-              console.log("Kill A HIGH CPU: ", JSON.stringify(stats, nill, 2));
+              console.log("Kill A HIGH CPU: ", stats);
             }
           });
         }
