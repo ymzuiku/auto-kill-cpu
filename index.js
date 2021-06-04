@@ -24,8 +24,8 @@ function killer() {
         if (_process) {
           pidusage(_process.pid, (err, stats) => {
             if (stats && stats.cpu > cpu) {
-              console.log("找到一个高频CPU", stats);
               exec(`kill -9 ${stats.pid}`);
+              console.log("Kill A HIGH CPU: ", JSON.stringify(stats, nill, 2));
             }
           });
         }
